@@ -5,6 +5,12 @@ import ComponentWithRefInstanceVariable from "./components/ref/TestUseRef";
 import ComponentWithDomApi from "./components/ref/ComponentWithDomApi";
 import ComponentWithRefRead from "./components/ref/ComponentWithRefRead";
 import CallbackEventHandle from "./components/event/CallbackEventHandle";
+import HigherOrderComponent from "./components/hoc/HigherOrderComponent";
+import CompositionHigherOrderComponent from "./components/hoc/CompositionHigherOrderComponent";
+import FunctionComponent from "./components/functionComponent/FunctionComponent";
+import UpdateFunctionComponent from "./components/functionComponent/UpdateFunctionComponent";
+import PureFunctionComponent from "./components/functionComponent/PureFunctionComponent";
+import ConditionalRenderingComponent from "./components/functionComponent/ConditionalRenderingComponent";
 
 function Kelvin({ value }: { value: any }) {
   return <div className="temp">{parseInt(value || 0) + 273.15}K</div>;
@@ -73,6 +79,14 @@ function App() {
       <ComponentWithRefRead />
       {/* Event  */}
       <CallbackEventHandle />
+      {/* Higher order component */}
+      <HigherOrderComponent />
+      <CompositionHigherOrderComponent />
+      {/* function component */}
+      <FunctionComponent />
+      <UpdateFunctionComponent />
+      <PureFunctionComponent />
+      <ConditionalRenderingComponent />
     </div>
   );
 }
