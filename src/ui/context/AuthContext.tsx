@@ -14,15 +14,18 @@ const { Provider } = AuthContext;
 
 function AuthContextProvider(props: AuthContextProviderProps) {
   const [isUser, setIsUser] = useState<boolean>(false);
-
   const signIn = () => {
-    console.log('ssssss');
+    if (!localStorage.getItem('customer_token')) {
+      localStorage.setItem('customer_token', 'token');
+    }
     setIsUser(true);
   };
   const signOut = () => {
     setIsUser(false);
+    if (localStorage.getItem('customer_token')) {
+      localStorage.removeItem('customer_token');
+    }
   };
-
   const value = {
     isUser,
     signIn,

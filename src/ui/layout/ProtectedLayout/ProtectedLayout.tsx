@@ -6,7 +6,7 @@ import ProtectedRoute from '../../router/ProtectedRoute';
 function ProtectedLayout() {
   const { isUser } = useContext(AuthContext);
   const defaultProtectedRouteProps: ProtectedRouteProps = {
-    isAuthenticated: isUser,
+    isAuthenticated: Boolean(localStorage.getItem('customer_token')) && Boolean(isUser),
     authenticationPath: '/public/login', // not authentication is redirect path /public
     children: <Outlet />,
   };
