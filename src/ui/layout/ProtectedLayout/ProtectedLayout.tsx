@@ -7,7 +7,7 @@ function ProtectedLayout() {
   const { isUser } = useContext(AuthContext);
   const defaultProtectedRouteProps: ProtectedRouteProps = {
     isAuthenticated: Boolean(localStorage.getItem('customer_token')) && Boolean(isUser),
-    authenticationPath: '/public/login', // not authentication is redirect path /public
+    authenticationPath: 'login', // not authentication is redirect path /public
     children: <Outlet />,
   };
   return (

@@ -27,27 +27,27 @@ function App() {
   // console.log(imgUrl);
   return (
     <Routes>
-      <Route
-        path="/"
-        element={
-          <div className="App">
-            <h1>Vite + React</h1>
-            <div>
-              <a href="https://reactjs.org" target="_blank">
-                <img src={reactLogo} className="logo react" alt="React logo" />
-              </a>
-            </div>
-          </div>
-        }
-      ></Route>
       <Route element={<Layout />}>
         {/* public router  */}
-        <Route path="public" element={<PublicLayout />}>
+        <Route element={<PublicLayout />}>
+          <Route
+            path="/"
+            element={
+              <div className="App">
+                <h1>Vite + React</h1>
+                <div>
+                  <a href="https://reactjs.org" target="_blank">
+                    <img src={reactLogo} className="logo react" alt="React logo" />
+                  </a>
+                </div>
+              </div>
+            }
+          ></Route>
           <Route path="register" element={<RegisterPage />} />
-          <Route path="login" element={<LoginPage />} index />
+          <Route path="login" element={<LoginPage />} />
         </Route>
-        {/* private router  */}
-        <Route path="protected" element={<ProtectedLayout />}>
+        {/* protected router  */}
+        <Route element={<ProtectedLayout />}>
           <Route path="account" element={<AccountPage />}>
             <Route path=":id" element={<AccountDetailPage />} />
           </Route>

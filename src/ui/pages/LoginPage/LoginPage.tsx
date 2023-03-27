@@ -1,14 +1,19 @@
 import React, { useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
 
 function LoginPage() {
-  const navigate = useNavigate();
+  let navigate = useNavigate();
+  let location = useLocation();
   const { isUser, signIn } = useContext(AuthContext);
+
+  let from = location.state?.from?.pathname || '/';
   function onHandleClick() {
-    console.log('onHandleClick');
-    if (signIn) {
-      signIn('user', () => console.log('Login'));
+    if (signIn && !isUser) {
+      console.log('onHandleClick', from);
+      signIn('user', () => {
+        navigate(from, { replace: true });
+      });
     }
     // navigate('/protected/account');
   }

@@ -1,7 +1,7 @@
 {
   "name": "vite-react-ts",
   "private": true,
-  "version": "v1.22.19",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -15,7 +15,9 @@
     "react-dom": "18.2.0",
     "react-redux": "8.0.5",
     "react-router-dom": "6.9.0",
-    "redux-persist": "6.0.0"
+    "redux": "4.2.1",
+    "redux-persist": "6.0.0",
+    "terser": "5.16.8"
   },
   "devDependencies": {
     "@types/node": "18.14.6",
