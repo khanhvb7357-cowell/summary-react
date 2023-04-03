@@ -12,7 +12,6 @@ import UpdateFunctionComponent from './ui/components/functionComponent/UpdateFun
 import PureFunctionComponent from './ui/components/functionComponent/PureFunctionComponent';
 import ConditionalRenderingComponent from './ui/components/functionComponent/ConditionalRenderingComponent';
 import { Route, Routes } from 'react-router-dom';
-import CustomerLayout from './ui/layout/CustomerLayout/CustomerLayout';
 import Layout from './ui/layout/Layout';
 import PublicLayout from './ui/layout/PublicLayout/PublicLayout';
 import LoginPage from './ui/pages/LoginPage/LoginPage';
